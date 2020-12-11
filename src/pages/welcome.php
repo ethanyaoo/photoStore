@@ -1,31 +1,30 @@
 <?php
+	include 'functions.php';
 
-	include "../config.php";
+	$pdo = pdo_connect_mysql();
 
-	$query = $db->query("SELECT * FROM images ORDER by uploaded_on DESC");
-
-	if ($query->num_rows > 0)
-	{
-		while($row = $query->fetch_assoc())
-		{
-			$imaageURL = 'uploads/'.$row["file_name"];
-	?>
-		<img src="<?php echo $imageURL; ?>" alt="" />
-	<?php }
-	}
-	else
-	{
-		?>
-		<p>No image(s) found...</p>
-<?php } ?>
+	$stmt = $pdo->query('SELECT * FROM photos ORDER by postingdate DESC');
+	$images = $stmt->fetchALL(PDO::FETCH_ASSOC);
+?>
 
 
 <?php include "templates/header.php"; ?>
     <head>
       <title>Welcome </title>
    </head>
-   
-	<img src="<?php echo $imageURL; ?>" alt="" />
+
+	<div class="photo"">
+		<?php foreach ($photos as $photo) : ?>
+		<?php if (file_exists($photo['path'])): ?>
+		<a href="#">
+			<img src="<?=$photo['path']?>" alt="<?=$photo['description']?>" data-id="<?=$photo['id']?>" data-title="<?=$image['title']?>" 
+				width="300" height="200">
+			<span>
+				<?=$image['description']?>
+			</span>
+		</a>
+		<?php endif; ?>
+		<?php endforeach ?>
 
    <body>
       <h1>Welcome <?php echo $login_session; ?></h1>
