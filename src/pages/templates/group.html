@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>PhotoStore</title>
+  </head>
+  <body>
+    <h1>Manage Groups</h1>
+    <div>
+      <div>
+        <h2>Create New Group</h2>
+        <form action="/createGroup" method="post">
+          <input type="text" name="groupname" placeholder="Group Name" required/>
+          <input type="submit" value="Create">
+        </form>
+        
+      </div>
+      <div>
+        <h2>Manage Existing Groups</h2>
+        
+          <ul>
+           
+              <li>
+                <h3>Add member</h3>
+                <form action="/addMember/{{group.groupName}}" method="post">
+                  <input type="text" name="member_username" placeholder="Username to add" required/>
+                  <input type="submit" value="Add">
+                </form>
+              </li>
+            
+          </ul>
+          
+          <span>Currently, if you don't have any groups, go create one.</span>
+        
+      </div>
+      <br>
+      <a href="/">Go back</a>
+    </div>
+  </body>
+</html>
