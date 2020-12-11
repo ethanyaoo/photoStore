@@ -1,4 +1,6 @@
 <?php
+	require "../config.php";
+
 	if(isset($_FILES['image']))
 	{
 		$errors = array();
