@@ -1,35 +1,37 @@
-if (isset($_POST['submit']))
-{
-	require "../config.php";
-	
-	try
+<?php
+	if (isset($_POST['submit']))
 	{
-		$connection = new PDO($dsn, $username, $password, $options);
+		require "../config.php";
+	
+		try
+		{
+			$connection = new PDO($dsn, $username, $password, $options);
 
-		$new_user = array(
-			"username" => $_POST['username'],
-			"password" => $_POST['password'],
-			"firstName" => $_POST['firstName'],
-			"lastName" => $_POST['lastName'],
-			"bio"	   => $_POST['bio']
-		);
-
-		$sql = sprintf(
-			"INSERT INTO %s (%s) values (%s)",
-			"users",
-			implode(", ", array_keys($new_user)),
-			":" . implode(", :", array_keys($new_user))
+			$new_user = array(
+				"username" => $_POST['username'],
+				"password" => $_POST['password'],
+				"firstName" => $_POST['firstName'],
+				"lastName" => $_POST['lastName'],
+				"bio"	   => $_POST['bio']
 			);
 
-		$statement = $connection->prepare($sql);
-		$statement->execute($new_user);
+			$sql = sprintf(
+				"INSERT INTO %s (%s) values (%s)",
+				"users",
+				implode(", ", array_keys($new_user)),
+				":" . implode(", :", array_keys($new_user))
+				);
 
-	{
-	catch(PDOException $error)
-	{
-		echo $sql . "<br>" . $error->getMessage();
+			$statement = $connection->prepare($sql);
+			$statement->execute($new_user);
+
+		{
+		catch(PDOException $error)
+		{
+			echo $sql . "<br>" . $error->getMessage();
+		}
 	}
-}
+?>
 
 <?php include "templates/header.php"; ?>
 
