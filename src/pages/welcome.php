@@ -1,9 +1,5 @@
-<?php
-   include('session.php');
-?>
-<html">
-   
-   <head>
+<?php include "templates/header.php"; ?>
+    <head>
       <title>Welcome </title>
    </head>
    
@@ -17,5 +13,5 @@
       
       </ul>
    </body>
-   
-</html>
+
+<?php include "templates/footer.php"; ?>
