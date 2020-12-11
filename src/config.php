@@ -1,7 +1,7 @@
 <?php
 
 	$host		= "localhost";
-	$username	= "root":
+	$username	= "root";
 	$password	= "root";
 	$dbname		= "project";
 	$dsn		= "mysql:host=$host;dbname=$dbname";
