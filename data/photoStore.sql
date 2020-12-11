@@ -151,11 +151,7 @@ CREATE TABLE IF NOT EXISTS `comment` (
 INSERT INTO `comment` (`commentID`, `photoID`, `username_commenter`, `comment`) VALUES
 (1, 4, 'indraratna', '123'),
 (2, 4, 'katrinaparedes', 'abc'),
-<<<<<<< HEAD:src/data/photoStore.sql
 (3, 4, 'ethanyao', 'xyz');
-=======
-(3, 4, 'ethanyao', 'xyz'),
->>>>>>> 34275f021c5cf90cd9b616906eea81ac5c7ae0aa:src/photoStore.sql
 
 
 -- --------------------------------------------------------
