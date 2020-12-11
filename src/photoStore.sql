@@ -23,15 +23,27 @@ DROP TABLE IF EXISTS `uploader`;
 CREATE TABLE IF NOT EXISTS `uploader` (
   `member_username` varchar(20) NOT NULL,
   `owner_username` varchar(20) NOT NULL,
+<<<<<<< HEAD:src/data/photoStore.sql
   PRIMARY KEY (`member_username`,`owner_username`),
   KEY `owner_username` (`owner_username`)
+=======
+  PRIMARY KEY (`member_username`,`owner_username`,),
+  KEY `owner_username` (`owner_username`,`_groupName`)
+>>>>>>> 34275f021c5cf90cd9b616906eea81ac5c7ae0aa:src/photoStore.sql
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `uploader`
 --
 
+<<<<<<< HEAD:src/data/photoStore.sql
 INSERT INTO `uploader` (`member_username`, `owner_username` ) VALUE
+=======
+INSERT INTO `uploader` (`member_username`, `owner_username`, ) VALUES
+('indraratna', 'indraratna'),
+('indraratna', 'indraratna'),
+('indraratna', 'indraratna'),
+>>>>>>> 34275f021c5cf90cd9b616906eea81ac5c7ae0aa:src/photoStore.sql
 ('indraratna', 'indraratna');
 
 -- --------------------------------------------------------
@@ -109,7 +121,11 @@ CREATE TABLE IF NOT EXISTS `photos` (
 INSERT INTO `photos` (`photoID`, `postingdate`, `filepath`, `photoPoster`) VALUES
 (1, '2020-11-25 14:42:14', 'cat.jpg','indraratna'),
 (2, '2020-11-25 14:49:42', 'dog.jpg',  'ethanyao'),
+<<<<<<< HEAD:src/data/photoStore.sql
 (8, '2020-11-27 00:00:00', './roommates_b.jpg','bobby');
+=======
+(8, '2020-11-27 00:00:00', './roommates_b.jpg','bobby'),
+>>>>>>> 34275f021c5cf90cd9b616906eea81ac5c7ae0aa:src/photoStore.sql
 
 -- --------------------------------------------------------
 
@@ -135,7 +151,11 @@ CREATE TABLE IF NOT EXISTS `comment` (
 INSERT INTO `comment` (`commentID`, `photoID`, `username_commenter`, `comment`) VALUES
 (1, 4, 'indraratna', '123'),
 (2, 4, 'katrinaparedes', 'abc'),
+<<<<<<< HEAD:src/data/photoStore.sql
 (3, 4, 'ethanyao', 'xyz');
+=======
+(3, 4, 'ethanyao', 'xyz'),
+>>>>>>> 34275f021c5cf90cd9b616906eea81ac5c7ae0aa:src/photoStore.sql
 
 
 -- --------------------------------------------------------
