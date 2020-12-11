@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+		<title>PhotoStore</title>
+		<style>
+			table, th, td {
+				border: 1px solid black;
+			}
+		</style>
+    </head>
+    <body>
+        <h1>Photo Detail</h1>
+        <div>
+			
+			<img src="/image/{{posterInfo.filepath}}" width="500" />
+      <br />
+      <form action="/thumbsUp_photo" method="post">
+        
+        <button type="submit" name="photoID" value={{posterInfo.photoID}}> ThumbsUp</button>
+      </form>
+      
+			<h3>PhotoID </h3>
+			<div>
+				<span>Posted By: {Test test} </span>
+				<br>
+				
+			</div>
+			
+			
+			<br>
+			<div>
+				<h2>ThumbsUp Info</h2>
+				<table>
+					<tr>
+						<th> Username </th>
+						
+					</tr>
+					
+						<tr>
+							<td> {Test ThumbsUp} </td>
+							
+						</tr>
+					
+				</table>
+			</div>
+			
+			
+		</div>
+
+
+		<br>
+        <a href="/images">Go back</a>
+    </body>
+</html>
