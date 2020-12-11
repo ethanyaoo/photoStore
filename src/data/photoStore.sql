@@ -163,14 +163,14 @@ CREATE TABLE IF NOT EXISTS `photo` (
 --
 
 INSERT INTO `photo` (`photoID`, `postingdate`, `filepath`, `allSubscribers`, `caption`, `photoPoster`) VALUES
-(1, '2019-11-25 14:42:14', 'cat.jpg', 1, '', 'jackzheng'),
-(2, '2019-11-25 14:49:42', 'dog.jpg', 1, '', 'jackzheng'),
-(8, '2019-11-27 00:00:00', './roommates_b.jpg', 1, 'roommates', 'bobby'),
-(4, '2019-11-28 00:00:00', 'dog.jpg', 1, NULL, 'weileenchen'),
-(3, '2019-11-27 00:00:00', 'cat.jpg', 0, NULL, 'weileenchen'),
-(9, '2019-11-27 00:00:00', './roommates_a.jpg', 1, 'roommates', 'abby'),
-(10, '2019-11-27 00:00:00', './bowling_team.jpg', 0, 'bowlingTeam', 'bobby'),
-(11, '2019-11-27 00:00:00', './family_bora_bora.jpg', 0, 'family vaca', 'abby');
+(1, '2020-11-25 14:42:14', 'cat.jpg', 1, '', 'indraratna'),
+(2, '2020-11-25 14:49:42', 'dog.jpg', 1, '', 'indraratna'),
+(8, '2020-11-27 00:00:00', './roommates_b.jpg', 1, 'roommates', 'bobby'),
+(4, '2020-11-28 00:00:00', 'dog.jpg', 1, NULL, 'ethanyao'),
+(3, '2020-11-27 00:00:00', 'cat.jpg', 0, NULL, 'ethanyao'),
+(9, '2020-11-27 00:00:00', './roommates_a.jpg', 1, 'roommates', 'katrinaparedes'),
+(10, '2020-11-27 00:00:00', './bowling_team.jpg', 0, 'bowlingTeam', 'bobby'),
+(11, '2020-11-27 00:00:00', './family_bora_bora.jpg', 0, 'family vaca', 'katrinaparedes');
 
 -- --------------------------------------------------------
 
@@ -180,10 +180,10 @@ INSERT INTO `photo` (`photoID`, `postingdate`, `filepath`, `allSubscribers`, `ca
 
 DROP TABLE IF EXISTS `sharedwith`;
 CREATE TABLE IF NOT EXISTS `sharedwith` (
-  `groupAdmin` varchar(20) NOT NULL,
-  `groupName` varchar(20) NOT NULL,
+  `_groupAdmin` varchar(20) NOT NULL,
+  `_groupName` varchar(20) NOT NULL,
   `photoID` int(11) NOT NULL,
-  PRIMARY KEY (`groupAdmin`,`groupName`,`photoID`),
+  PRIMARY KEY (`_groupAdmin`,`_groupName`,`photoID`),
   KEY `photoID` (`photoID`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
