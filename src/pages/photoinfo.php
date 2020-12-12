@@ -20,11 +20,15 @@
     
     if($_SERVER["REQUEST_METHOD"]=="POST"){
     	$myusername = mysql_real_escape_string($db,$_POST['username']);
-        
-        $sql = "SELECT username FROM member";
+	$sql = "SELECT username FROM member";
         $result = mysql_query($db,$sql);
+	$myPhotoID = mysql_real_escape_string($db, $_POST['photoID']);
+	$sql = "SELECT photoPoster from photos WHERE photoID = $myPhotoID";
+	$myposter = mysql_real_escape_string($db,$_POST['photoPoster']
         
-        $myPhotoID = mysql_real_escape_string($db, $_POST['photoID']);
+        
+        
+       
        
     }
 ?>
@@ -46,7 +50,7 @@
       
 			<h3>PhotoID {{photoID}}</h3>
 			<div>
-				<span>Posted By: {{firstName}} {{lastName}}</span>
+				<span>Posted By: {{firstName}} {{lastName}} <?php $myposter?></span>
 				<br>
 				
 			</div>
