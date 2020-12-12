@@ -101,9 +101,13 @@ CREATE TABLE IF NOT EXISTS `photos` (
 --
 
 INSERT INTO `photos` (`photoID`, `postingdate`, `filepath`, `photoPoster`) VALUES
-(1, '2020-11-25 14:42:14', 'cat.jpg','indraratna'),
-(2, '2020-11-25 14:49:42', 'dog.jpg',  'ethanyao'),
-(8, '2020-11-27 00:00:00', './roommates_b.jpg','bobby');
+(1, '2020-11-25 14:42:14', 'xkcd1.png', 'indraratna'),
+(2, '2020-11-25 14:49:42', 'xkcd2.png', 'ethanyao'),
+(3, '2020-11-27 00:00:00', 'xkcd3.png', 'katrinaparedes'),
+(4, '2020-12-10 13:26:34', 'xkcd4.png', 'tester'),
+(5, '2020-12-10 13:36:12', 'xkcd5.png', 'tester'),
+(6, '2020-12-11 15:00:45', 'xkcd5.png', 'tester'),
+(7, '2020-12-11 22:01:34', 'xkcd5.png', 'tester');
 
 -- --------------------------------------------------------
 
