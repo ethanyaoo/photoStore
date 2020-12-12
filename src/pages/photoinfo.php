@@ -14,7 +14,7 @@
     	
     }
     function commenting(){
-    	$random_number = intval("0".rand(1,9).rand(0.9).rand(0.9).rand(0.9).rand(0.9));//creating random comment ID
+    	$random_number = intval("0".rand(1,9));//creating random comment ID
     	$sql = "INSERT INTO comment (commentID, photoID, username_commenter, comment) VALUES ($random_number, $myPhotoID, $myusername, comment_message)";
     }
     
