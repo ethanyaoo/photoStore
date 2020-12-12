@@ -16,12 +16,12 @@
 		<?php foreach ($photos as $photo) : ?>
 		<?php if (file_exists($photo['path'])): ?>
 		<a href="photoinfo.php?id=<?php echo $id;?>">
-			<img src="<?=$photo['path']?>" alt="<?=$photo['description']?>" data-id="<?=$photo['id']?>" data-title="<?=$image['title']?>" 
-				width="300" height="200">
-			<span>
-				<?=$image['description']?>
-			</span>
+			Go to Photo
 		</a>
+		<img src=<?=$photo['filepath']?>" data-id="<?=$photo['photoID']?>" width="300" height="200">
+		<span>
+			<?=$photo['photoPoster']?>
+		</span>
 		<?php endif; ?>
 		<?php endforeach ?>
 

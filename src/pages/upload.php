@@ -19,6 +19,10 @@
 		if (empty($errors)==true)
 		{
 			move_uploaded_file($file_tmp, "images/".$file_name);
+
+			$pdo = pdo_connect_mysql();
+			$stmt = $pdo->prepare('INSERT INTO photos VALUES (NULL, CURRENT_TIMESTAMP, ?, ?)');
+			$stmt->execute([$_POST["images/".$file_name], $_POST['uploaderName']);
 			echo "Uploaded";
 		}
 		else
@@ -32,11 +36,15 @@
 
 <h2>
 	<form action="" method="POST" enctype="multipart/form-data">
-		<label for="file">
+		<label for="name">
+			Input name
+		</label>
+		<input type="text" name="uploaderName" id="uploaderName">
+
+		<label for="image">
 			Upload an image
 		</label>
-
-		<input type="file" name="image" />
+		<input type="file" name="image" accept="image/*" id="image" />
 
 		<label for="submit">
 			Submit
