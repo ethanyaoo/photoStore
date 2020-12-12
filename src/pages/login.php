@@ -5,15 +5,15 @@
    if($_SERVER["REQUEST_METHOD"] == "POST") {
        
       
-      $myusername = mysqli_real_escape_string($db,$_POST['username']);
-      $mypassword = mysqli_real_escape_string($db,$_POST['password']); 
+      $myusername = mysql_real_escape_string($db,$_POST['username']);
+      $mypassword = mysql_real_escape_string($db,$_POST['password']); 
       
       $sql = "SELECT * FROM member WHERE username = '$myusername' and password = '$mypassword'";
-      $result = mysqli_query($db,$sql);
-      $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
+      $result = mysql_query($db,$sql);
+      $row = mysql_fetch_array($result,MYSQLI_ASSOC);
       
       
-      $count = mysqli_num_rows($result);
+      $count = mysql_num_rows($result);
       
       
 		
