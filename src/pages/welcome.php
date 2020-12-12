@@ -7,7 +7,6 @@
 	$images = $stmt->fetchALL(PDO::FETCH_ASSOC);
 ?>
 
-
 <?php include "templates/header.php"; ?>
     <head>
       <title>Welcome </title>

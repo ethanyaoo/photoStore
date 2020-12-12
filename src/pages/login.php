@@ -1,7 +1,5 @@
 <?php include "templates/header.php"; ?>
-<?php 
-    session_start();
-   
+<?php
    if($_SERVER["REQUEST_METHOD"] == "POST") {
        
       
@@ -33,7 +31,7 @@
     <body>
         <h1>Login</h1>
         <div>
-            <form action="/loginAuth" method="post">
+            <form action="" method="post">
                 <input type="text" name="username" placeholder="Username" required/>
                 <br/>
                 <input type="password" name="password" placeholder="Password" required/>
