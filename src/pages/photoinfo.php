@@ -1,25 +1,30 @@
 <!DOCTYPE html>
 <?php include "templates/header.php"; ?>
 
-
 <?php
 	session_start();
+
+    if (isset( $_GET["photoID"]))
+    {
+	echo "<p>ID: " . $_GET["photoID"] . "</p>";
+    }
+
     function thumbs(){
     	$sql = "INSERT INTO thumbsUp (username, photoID) VALUES ($myusername, $myPhotoID)";
     	
     }
     function commenting(){
-    	$random_number = intval("0".rand(1,9).rand(0.9).rand(0.9).rand(0.9).rand(0.9));//creating random comment ID
+    	$random_number = intval("0".rand(1,9));//creating random comment ID
     	$sql = "INSERT INTO comment (commentID, photoID, username_commenter, comment) VALUES ($random_number, $myPhotoID, $myusername, comment_message)";
     }
     
     if($_SERVER["REQUEST_METHOD"]=="POST"){
-    	$myusername = 			  mysqli_real_escape_string($db,$_POST['username']);
+    	$myusername = mysql_real_escape_string($db,$_POST['username']);
         
         $sql = "SELECT username FROM member";
-        $result = mysqli_query($db,$sql);
+        $result = mysql_query($db,$sql);
         
-        $myPhotoID = mysqli_real_escape_string($db, $_POST['photoID']);
+        $myPhotoID = mysql_real_escape_string($db, $_POST['photoID']);
        
     }
 ?>
@@ -52,9 +57,9 @@
                 
     			<?php 
                 $sql="SELECT username FROM thumbUp WHERE photoID = $myPhotoID";
-   			    $result=mysqli_query($sql);
+   			    $result=mysql_query($sql);
     			$i=1;
-    				while($row=mysqli_fetch_assoc($result))
+    				while($row=mysql_fetch_assoc($result))
     {
         $name[$i] = $row['username'];
         $i++;
@@ -105,9 +110,9 @@
                 
                 <?php 
                 $sql="SELECT * FROM comment WHERE photoID = $myPhotoID";
-   			    $result=mysqli_query($sql);
+   			    $result=mysql_query($sql);
     			$i=1;
-    				while($row=mysqli_fetch_assoc($result))
+    				while($row=mysql_fetch_assoc($result))
     {
         $name[$i] = $row['username'];
         $message[$i] = $row['comment'];

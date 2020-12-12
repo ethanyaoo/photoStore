@@ -7,7 +7,6 @@
 	$images = $stmt->fetchALL(PDO::FETCH_ASSOC);
 ?>
 
-
 <?php include "templates/header.php"; ?>
     <head>
       <title>Welcome </title>
@@ -16,7 +15,7 @@
 	<div class="photo"">
 		<?php foreach ($photos as $photo) : ?>
 		<?php if (file_exists($photo['path'])): ?>
-		<a href="#">
+		<a href="photoinfo.php?id=<?php echo $id;?>">
 			<img src="<?=$photo['path']?>" alt="<?=$photo['description']?>" data-id="<?=$photo['id']?>" data-title="<?=$image['title']?>" 
 				width="300" height="200">
 			<span>

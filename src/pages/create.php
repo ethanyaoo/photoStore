@@ -25,7 +25,7 @@
 			$statement = $connection->prepare($sql);
 			$statement->execute($new_user);
 
-		{
+		}
 		catch(PDOException $error)
 		{
 			echo $sql . "<br>" . $error->getMessage();
