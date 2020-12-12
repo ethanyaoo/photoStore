@@ -1,9 +1,14 @@
 <!DOCTYPE html>
 <?php include "templates/header.php"; ?>
 
-
 <?php
 	session_start();
+
+    if (isset( $_GET["photoID"]))
+    {
+	echo "<p>ID: " . $_GET["photoID"] . "</p>";
+    }
+
     function thumbs(){
     	$sql = "INSERT INTO thumbsUp (username, photoID) VALUES ($myusername, $myPhotoID)";
     	
