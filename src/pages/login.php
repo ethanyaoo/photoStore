@@ -4,7 +4,7 @@
        
       
       $myusername = mysql_real_escape_string($db,$_POST['username']);
-      $mypassword = mysql_real_escape_string($db,$_POST['password']); 
+      $mypassword = mysql_real_escape_string($db,$_POST['password']);
       
       $sql = "SELECT * FROM member WHERE username = '$myusername' and password = '$mypassword'";
       $result = mysql_query($db,$sql);
